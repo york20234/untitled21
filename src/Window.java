@@ -7,7 +7,7 @@ public class Window extends JFrame {
     private JLabel id=new JLabel("ID");
     private JLabel pw=new JLabel("PW");
     private JButton l=new JButton("Login");
-    private JButton e=new JButton("Exithj");
+    private JButton e=new JButton("Exit");
     private JTextField jt=new JTextField();
     private JPasswordField jp=new JPasswordField();
     private Container cp;
@@ -18,7 +18,8 @@ public class Window extends JFrame {
     private  void  init(){
         e.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)
+            {
                 System.exit(0);
             }
         });
@@ -28,7 +29,7 @@ public class Window extends JFrame {
                 String pw=new String(jp.getPassword());
                 if (jt.getText().equals("h304")  &&  pw.equals("23323456")){
                     javax.swing.JOptionPane.showMessageDialog(Window.this,"Login Success");
-                    AppFrame w=new AppFrame();
+                    AppFrame w=new AppFrame(Window.this);
                     w.setVisible(true);
                 }
                 else {
@@ -57,6 +58,12 @@ public class Window extends JFrame {
 
 
 
+
+
+    }
+    public void resetData(){
+        jt.setText("");
+        jp.setText("");
     }
 }
 

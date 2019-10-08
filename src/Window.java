@@ -7,7 +7,7 @@ public class Window extends JFrame {
     private JLabel id=new JLabel("ID");
     private JLabel pw=new JLabel("PW");
     private JButton l=new JButton("Login");
-    private JButton e=new JButton("Exit");
+    private JButton e=new JButton("Exithj");
     private JTextField jt=new JTextField();
     private JPasswordField jp=new JPasswordField();
     private Container cp;

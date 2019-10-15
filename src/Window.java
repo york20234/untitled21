@@ -8,6 +8,7 @@ public class Window extends JFrame {
     private JLabel pw=new JLabel("PW");
     private JButton l=new JButton("Login");
     private JButton e=new JButton("Exit");
+    private JButton move=new JButton("動態");
     private JTextField jt=new JTextField();
     private JPasswordField jp=new JPasswordField();
     private Container cp;
@@ -37,33 +38,42 @@ public class Window extends JFrame {
                 }
             }
         });
-       cp=this.getContentPane();
-       this.setLayout(null);
-       this.setSize(450,250);
-       this.setDefaultCloseOperation(Window.EXIT_ON_CLOSE);
+        move.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Num w=new Num(Window.this);
+                w.setVisible(true);
+            }
+        });
+        cp=this.getContentPane();
+        this.setLayout(null);
+        this.setSize(400,320);
+        this.setDefaultCloseOperation(Window.EXIT_ON_CLOSE);
 
         id.setBounds(50,50,100,30);
         pw.setBounds(50,150,100,30);
         jt.setBounds(100,50,250,30);
         jp.setBounds(100,150,250,30);
-        l.setBounds(350,50,70,30);
-        e.setBounds(350,150,70,30);
+        l.setBounds(150,220,70,30);
+        e.setBounds(250,220,70,30);
+        move.setBounds(50,220,70,30);
 
-       cp.add(id);
-       cp.add(pw);
-       cp.add(jt);
-       cp.add(jp);
-       cp.add(l);
-       cp.add(e);
+        cp.add(id);
+        cp.add(pw);
+        cp.add(jt);
+        cp.add(jp);
+        cp.add(l);
+        cp.add(e);
+        cp.add(move);
 
 
 
-
-
+    }
+    public void setJp(String str){
+        jp.setText(str);
     }
     public void resetData(){
         jt.setText("");
         jp.setText("");
     }
 }
-

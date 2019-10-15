@@ -9,7 +9,14 @@ public class AppFrame extends JFrame {
     private JMenu jmFile= new JMenu("File");
     private JMenuItem exit =new JMenuItem("Exit");
     private JMenuItem jmiLogout=new JMenuItem("Logout");
+    private JMenu jmTool= new JMenu("Tool");
+    private JMenuItem jmiCalculator=new JMenuItem("Calculator");
+    private JMenuItem jmiEncryptor=new JMenuItem("Encryptor");
+
+
     private Window loginFrame;
+    private JDesktopPane desktop=new JDesktopPane();
+    private EncryptorFrame internalFrame1=new EncryptorFrame();
 
 
     public AppFrame(Window login){
@@ -24,6 +31,10 @@ public class AppFrame extends JFrame {
         jmbar.add(jmFile);
         jmFile.add(exit);
         jmFile.add(jmiLogout);
+        jmbar.add(jmTool);
+        jmTool.add(jmiCalculator);
+        jmTool.add(jmiEncryptor);
+
         exit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e)
@@ -40,5 +51,20 @@ public class AppFrame extends JFrame {
                 loginFrame.setVisible(true);
             }
         });
+        jmiCalculator.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        jmiEncryptor.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                internalFrame1.setVisible(true);
+            }
+        });
+
+        this.add(desktop);
+        desktop.add(internalFrame1);
     }
 }
